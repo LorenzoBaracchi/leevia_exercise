@@ -6,7 +6,4 @@ module Main
     City.new(name: csv_line[2], country: csv_line[1], altitude: csv_line[5])
   end
 
-  def self.group_by cities, attribute
-    cities.group_by {|city| city.send(attribute)}
-  end
 end
