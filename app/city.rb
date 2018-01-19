@@ -1,4 +1,5 @@
 class City
+  include Comparable
 
   attr_reader :name, :country, :altitude
 
@@ -6,6 +7,10 @@ class City
     @name = name
     @country = country
     @altitude = altitude.to_i
+  end
+
+  def <=> another_city
+    self.altitude <=> another_city.altitude
   end
 
   def to_s
