@@ -1,6 +1,8 @@
-Using Ruby/RoR, read the provided CSV that contains geographical location (latitude, longitude, altitude) of all main cities of the world.
+Using Ruby/RoR, read the provided CSV that contains geographical location (latitude, longitude, altitude)
+of all main cities of the world.
 
-From the provided CSV extract cities with highest altitude, just one city for each country, and print the output to STDOUT and also into a .txt file (created in the project folder).
+From the provided CSV extract cities with highest altitude,
+just one city for each country, and print the output to STDOUT and also into a .txt file (created in the project folder).
 
 The output must be ordered by altitude, in descending order, from highest to lowest, one city per line.
 
