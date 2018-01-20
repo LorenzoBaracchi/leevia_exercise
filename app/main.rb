@@ -10,7 +10,7 @@ module Main
   end
 
   def self.extract_highest cities
-    cities.group(:country).map do |country, cts|
+    cities.group(:country).map do |_, cts|
       cts.sort.last
     end.sort.reverse!
   end
@@ -19,9 +19,13 @@ module Main
     csv = CSV.read(file_name, {col_sep: ';'})
     cities = Collection.new(csv.map{|line| csv_to_city line})
     highests = extract_highest cities
+
+    file = File.open("output.txt", "w")
     highests.each do |city|
       puts city
+      file.puts city
     end
+    file.close
   end
 
 end
