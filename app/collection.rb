@@ -5,6 +5,6 @@ class Collection < SimpleDelegator
   end
 
   def group attribute
-    grouped = self.group_by {|city| city.send(attribute)}
+    self.group_by {|city| city.send(attribute)}
   end
 end
