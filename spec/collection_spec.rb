@@ -10,7 +10,7 @@ RSpec.describe Collection do
       City.new(name: 'Potenza', country: 'Italy', altitude: 698.0),
       City.new(name: 'Rome', country: 'Italy', altitude: 14.0),
       City.new(name: 'Seaforth', country: 'Jamaica', altitude: 127),
-      City.new(name: 'Port Royal', country: 'Jamaica', altitude: -9999.0),
+      City.new(name: 'Port Royal', country: 'Jamaica', altitude: -9999.0)
       ])}
 
     subject {cities.group(:country)}
@@ -21,4 +21,5 @@ RSpec.describe Collection do
       expect(subject['Jamaica'].map(&:name)).to match_array ['Seaforth', 'Port Royal']
     end
   end
+
 end

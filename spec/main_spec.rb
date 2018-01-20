@@ -16,4 +16,17 @@ RSpec.describe Main do
     end
   end
 
+  describe 'extract_highest' do
+    let(:cities) {Collection.new([
+      City.new(name: 'Varese', country: 'Italy', altitude: 390.0),
+      City.new(name: 'Potenza', country: 'Italy', altitude: 698.0),
+      City.new(name: 'Rome', country: 'Italy', altitude: 14.0),
+      City.new(name: 'Seaforth', country: 'Jamaica', altitude: 127),
+      City.new(name: 'Port Royal', country: 'Jamaica', altitude: -9999.0)])}
+
+      it 'should extract highest city for each county' do
+        expect(Main.extract_highest(cities).map(&:name)).to eq ['Potenza', 'Seaforth']
+      end
+  end
+
 end
